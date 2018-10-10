@@ -43,7 +43,7 @@ public class CandidatoController {
 	}
 	
 	/**
-	 * Método que busca candidato por identificador
+	 * Método que busca todos os candidatos
 	 * @param identificador
 	 * @return
 	 */

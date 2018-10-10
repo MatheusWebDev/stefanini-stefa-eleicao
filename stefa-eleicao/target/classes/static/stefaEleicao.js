@@ -12,5 +12,11 @@ stefaEleicao.config(['$stateProvider', '$urlRouterProvider', '$routeProvider', f
 	   controller : 'adicionaCandidatoController',
 	});
 	
+	$stateProvider.state('/votacao', {
+		   url: '/votacao',
+		   templateUrl : 'pages/votacao/resultados.html',
+		   controller : 'adicionaVotacaoController',
+	});
+	
    $urlRouterProvider.otherwise('/');
 }]);

@@ -17,6 +17,11 @@ public class CadidatoVotacaoDTO {
 		return votacaoDTOs;
 	}
 
+	public List<VotacaoDTO> addVotacao(VotacaoDTO votacaoDTO){
+		votacaoDTOs.add(votacaoDTO);
+		return votacaoDTOs;
+	}
+	
 	public void setVotacaoDTOs(List<VotacaoDTO> votacaoDTOs) {
 		this.votacaoDTOs = votacaoDTOs;
 	}

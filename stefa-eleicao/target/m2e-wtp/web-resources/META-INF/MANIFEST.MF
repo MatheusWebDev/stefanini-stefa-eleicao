@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Weblogic-Application-Version: 0.0.1-SNAPSHOT
-Built-By: paulocotta
-Build-Jdk: 1.8.0_121
+Built-By: Matheus Fernandes
+Build-Jdk: 10.0.2
 Created-By: Maven Integration for Eclipse
+Weblogic-Application-Version: 0.0.1-SNAPSHOT
 
