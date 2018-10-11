@@ -12,5 +12,8 @@ stefaEleicao.service('adicionaVotacaoService', ['$http',
 		return $http.get(uri + '/votacao/resultado');
 	};
 
+	this.getCandidatoPorIdentificador = function(uri, identificador){
+		return $http.get(uri + '/candidato/busca-todos-candidato?identificador=' + identificador);
+	};
 	
 }]);

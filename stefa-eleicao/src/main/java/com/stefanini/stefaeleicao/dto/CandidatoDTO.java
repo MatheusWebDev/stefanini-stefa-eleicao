@@ -16,7 +16,7 @@ public class CandidatoDTO {
 	
 	private Integer numeroPartido;
 	
-	private Integer quantidadeVotos; 
+	private Integer quantidadeVotos = 0; 
 
 	public String getIdentificador() {
 		return identificador;
