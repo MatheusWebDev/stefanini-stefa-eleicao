@@ -58,6 +58,10 @@ input {
   padding: 0px 15px;
 }
 
+#numPartido {
+	width: 100%;
+}
+
 a {
   text-decoration:inherit
 }
