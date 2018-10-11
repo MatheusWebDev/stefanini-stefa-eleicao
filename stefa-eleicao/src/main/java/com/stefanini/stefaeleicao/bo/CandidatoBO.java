@@ -45,6 +45,17 @@ public class CandidatoBO {
 	}
 	
 	/**
+	 * Método que adiciona os votos no candidato identificado
+	 * @param identificador
+	 * @return
+	 */
+	public List<CandidatoDTO> computaVotoCandidato(String identificador){
+		CandidatoDTO candidato = buscaPorIdentificador(identificador);
+		candidato.setQuantidadeVotos(candidato.getQuantidadeVotos()+1);
+		return BancoMemoriaCandidato.getInstancia().atualizaCandidatosVotos(candidato);
+	}	
+	
+	/**
 	 * Método candidato ALL
 	 * @return
 	 */

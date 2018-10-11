@@ -42,7 +42,7 @@ public class BancoMemoriaCandidato {
 	}
 	
 	/**
-	 * Método que busca um identificador
+	 * Método que busca um candidato por identificador
 	 * @param identificador
 	 * @return
 	 */
@@ -58,6 +58,26 @@ public class BancoMemoriaCandidato {
 		}
 		
 		return new CandidatoDTO();
+	}
+	
+	/**
+	 * Método que atualiza um candidato com votos computados
+	 * @param identificador
+	 * @return
+	 */
+	public List<CandidatoDTO> atualizaCandidatosVotos(CandidatoDTO candidatoComNovosVotos){
+		if(candidatoDTOs.size() > 0){
+			for(int i = 0; i < candidatoDTOs.size(); i++){
+				if(candidatoDTOs.get(i).getIdentificador().equals(candidatoComNovosVotos.getIdentificador())){
+					candidatoDTOs.set(i, candidatoComNovosVotos);
+					return candidatoDTOs;
+				}
+			}
+		}else{
+			return candidatoDTOs;
+		}
+		
+		return candidatoDTOs;
 	}
 	
 }

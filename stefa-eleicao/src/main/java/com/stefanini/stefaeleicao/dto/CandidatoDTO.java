@@ -15,6 +15,8 @@ public class CandidatoDTO {
 	private String partido;
 	
 	private Integer numeroPartido;
+	
+	private Integer quantidadeVotos; 
 
 	public String getIdentificador() {
 		return identificador;
@@ -46,6 +48,14 @@ public class CandidatoDTO {
 
 	public void setNumeroPartido(Integer numeroPartido) {
 		this.numeroPartido = numeroPartido;
+	}
+
+	public Integer getQuantidadeVotos() {
+		return quantidadeVotos;
+	}
+
+	public void setQuantidadeVotos(Integer quantidadeVotos) {
+		this.quantidadeVotos = quantidadeVotos;
 	}
 	
 }

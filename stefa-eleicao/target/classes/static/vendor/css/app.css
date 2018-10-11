@@ -314,6 +314,7 @@ div#navigation ul li a {
 	font-size:0.9em;
 	text-transform:uppercase;
 	padding:8px 20px 8px;
+	cursor: pointer;
 }
 div#navigation ul li.selected a, div#navigation ul li.selected a:hover {
 	background:#474747 url('../images/nav-selected.png') no-repeat scroll bottom center;

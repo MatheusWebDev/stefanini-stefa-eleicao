@@ -33,6 +33,16 @@ public class CandidatoController {
 	}
 	
 	/**
+	 * Método que adiciona candidato
+	 * @param candidatoDTO
+	 * @return
+	 */
+	@RequestMapping(method=RequestMethod.POST, value="/votacao", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public List<CandidatoDTO> adicionaVotosAoCandidato(@RequestBody CandidatoDTO candidatoDTO) {
+		return CandidatoBO.getInstancia().computaVotoCandidato(candidatoDTO.getIdentificador());
+	}
+	
+	/**
 	 * Método que busca candidato por identificador
 	 * @param identificador
 	 * @return
