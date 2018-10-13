@@ -27,9 +27,10 @@ stefaEleicao.controller('adicionaVotacaoController', ['$scope', '$state', '$cook
 		$scope.cssMessage = "message-table-correct";
 		adicionaVotacaoService.getListaTodosCadidato(util.getUri()).success(function(d, s, h, c) {
 			$scope.candidatoDTO = $scope.candidatos.find(function(element, index, array){
-				return element.nome === "teste";
+				console.log(element.numeroPartido);
+				console.log(partidoVotado.value);
+				return Number(element.numeroPartido) === Number($scope.partidoVotado);
 			});
-			console.log($scope.candidatoDTO);
 		}).error(function(d, s, h, c) {
 			$scope.messages = "Erro não foi possível trazer dados.";
 			$scope.visibleMessage = true;
@@ -41,7 +42,7 @@ stefaEleicao.controller('adicionaVotacaoController', ['$scope', '$state', '$cook
 			$scope.visibleMessage = true;
 			$scope.cssMessage = "message-table-correct";
 		}).error(function(d, s, h, c) {
- 			//$scope.messages = "Erro ao tentar votar no candidato.";
+ 			$scope.messages = "Erro ao tentar votar no candidato.";
  			$scope.visibleMessage = true;
  			$scope.cssMessage = "message-table-incorret";
  	    });
