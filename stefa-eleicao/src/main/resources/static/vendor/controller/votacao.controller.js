@@ -10,6 +10,7 @@ stefaEleicao.controller('adicionaVotacaoController', ['$scope', '$state', '$cook
 	$scope.partidoVotado = "";
 	
 	adicionaVotacaoService.getListaTodosCadidato(util.getUri()).success(function(d, s, h, c) {
+		debugger;
 		$scope.candidatos = d;
 	}).error(function(d, s, h, c) {
 		$scope.messages = "Erro não foi possível trazer dados.";
@@ -25,19 +26,14 @@ stefaEleicao.controller('adicionaVotacaoController', ['$scope', '$state', '$cook
 		$scope.messages = "Aguarde que estamos processando...";
 		$scope.visibleMessage = true;
 		$scope.cssMessage = "message-table-correct";
-		adicionaVotacaoService.getListaTodosCadidato(util.getUri()).success(function(d, s, h, c) {
-			$scope.candidatoDTO = $scope.candidatos.find(function(element, index, array){
-				console.log(element.numeroPartido);
-				console.log(partidoVotado.value);
-				return Number(element.numeroPartido) === Number($scope.partidoVotado);
-			});
-		}).error(function(d, s, h, c) {
-			$scope.messages = "Erro não foi possível trazer dados.";
-			$scope.visibleMessage = true;
-			$scope.cssMessage = "message-table-incorret";
-			
-	    });
+		// enconta o candidato do partido votado
+		$scope.candidatoDTO = $scope.candidatos.find(function(element, index, array){
+			debugger;
+			return String(element.numeroPartido) === $scope.partidoVotado;
+		});
+
 		adicionaVotacaoService.postVotarNoCandidato(util.getUri(), $scope.candidatoDTO).success(function(d, s, h, c) {
+			debugger;
 			$scope.messages = "Candidato " + $scope.candidatoDTO.nome + ' recebeu seu voto.';
 			$scope.visibleMessage = true;
 			$scope.cssMessage = "message-table-correct";
